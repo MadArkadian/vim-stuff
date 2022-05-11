@@ -25,6 +25,8 @@ let g:coc_global_extensions = [
 	\ 'coc-eslint',
 	\ 'coc-prettier',
 	\ 'coc-json',
+	\ 'coc-go',
+	\ 'coc-rust-analyzer',
 	\ ]
 inoremap <silent><expr> <c-space> coc#refresh()
 colorscheme gruvbox
