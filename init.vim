@@ -6,6 +6,7 @@ if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 endif
 set tabstop=4
 set shiftwidth=4
+set nu
 set rnu
 call plug#begin('~/.config/nvim/plugged')
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
