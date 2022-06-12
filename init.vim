@@ -4,8 +4,10 @@ if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.config/nvim/autoload/plug.vim
 	autocmd VimEnter * PlugInstall
 endif
-set tabstop=4
-set shiftwidth=4
+set tabstop=3
+set shiftwidth=0
+set smartindent
+set cursorline
 set nu
 set rnu
 call plug#begin('~/.config/nvim/plugged')
@@ -13,10 +15,12 @@ Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'savq/melange'
 Plug 'morhetz/gruvbox'
+"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 let g:coc_global_extensions = [
